@@ -1,76 +1,51 @@
-### Java ###
-*.class
-*.jar
-*.war
-*.ear
-.mtj.tmp/
-hs_err_pid*
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-### Package Files ###
-*.nar
-*.zip
-*.tar.gz
-*.rar
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
 
-### Maven ###
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-.mvn/*
+# dependencies
+/node_modules
 
-### Eclipse ###
-.metadata
-.classpath
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
+
+# IDEs and editors
+/.idea
 .project
+.classpath
+.c9/
+*.launch
 .settings/
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.loadpath
+*.sublime-workspace
 
-### STS ###
-.apt_generated
-.factorypath
-.springBeans
-.sts4-cache
-mvnw.*
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
 
-### IntelliJ ###
-.idea/
-*.iml
-*.ipr
-*.iws
-out/
-.idea_modules/
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
 
-### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
-.nb-gradle/
-
-### VS Code ###
-.vscode/
-
-### BlueJ files ### 
-*.ctxt
-
-### Log file ### 
-*.log
-
-### OS X ### 
+# System Files
 .DS_Store
-*.metadata
-*.metadata/
-.metadata/
+Thumbs.db
+
+# Angular
+/node_modules
+/dist
+package-lock.json

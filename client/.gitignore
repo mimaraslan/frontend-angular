@@ -44,6 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Angular
 /node_modules
 /dist
 package-lock.json
