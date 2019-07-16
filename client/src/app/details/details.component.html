@@ -24,14 +24,13 @@
     }
 }
 -->
+<div *ngIf="myuser$">
+    <h1>{{ myuser$.name }}</h1>
 
-<h1>{{ myuser$.name }}</h1>
-
-<ul>
-  <li><strong>Username:</strong> {{ myuser$.username }}</li>
-  <li><strong>Email:</strong> {{ myuser$.email }}</li>
-  <li><strong>Phone:</strong> {{ myuser$.phone }}</li>
-  <li><strong>company:</strong> {{ myuser$.company.name }} - {{ myuser$.company.catchPhrase }} </li>
-
-
-</ul>
+    <ul>
+        <li><strong>Username:</strong> {{ myuser$.username }}</li>
+        <li><strong>Email:</strong> {{ myuser$.email }}</li>
+        <li><strong>Phone:</strong> {{ myuser$.phone }}</li>
+        <li><strong>company:</strong> {{ myuser$.company.name }} - {{ myuser$.company.catchPhrase }} </li>
+    </ul>
+</div>
