@@ -1,0 +1,75 @@
+@if (viewMode){
+  @if (currentClient.id){
+  <h4>Client</h4>
+  <div>
+    <label><strong>FirstName:</strong></label> {{ currentClient.firstName }}
+  </div>
+  <div>
+    <label><strong>LastName:</strong></label>
+    {{ currentClient.lastName }}
+  </div>
+  <div>
+    <label><strong>Status:</strong></label>
+    {{ currentClient.confirmed ? "Confirmed" : "Pending" }}
+  </div>
+
+  <a class="btn btn-warning" routerLink="/clients/{{ currentClient.id }}">
+    Edit
+  </a>
+  } @else {<p>Please click on a Client...</p>}
+} @else {
+  @if (currentClient.id) {
+  <div class="edit-form">
+    <h4>Client</h4>
+    <form>
+      <div class="form-group">
+        <label for="firstName">FirstName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          [(ngModel)]="currentClient.firstName"
+          name="firstName"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">LastName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          [(ngModel)]="currentClient.lastName"
+          name="lastName"
+        />
+      </div>
+
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentClient.confirmed ? "Confirmed" : "Pending" }}
+      </div>
+    </form>
+
+    @if (currentClient.confirmed) {
+    <button class="btn btn-primary mr-2"
+      (click)="updateConfirmed(false)" >
+      Unconfirm
+    </button>
+    } @else {
+    <button class="btn btn-primary mr-2" (click)="updateConfirmed(true)">
+      Confirm
+    </button>
+    }
+
+    <button class="btn btn-danger mr-2" (click)="deleteClient()">
+      Delete
+    </button>
+    <button
+      type="submit"
+      class="btn btn-success"
+      (click)="updateClient()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  } @else {<p>Cannot access this Client...</p>}
+}

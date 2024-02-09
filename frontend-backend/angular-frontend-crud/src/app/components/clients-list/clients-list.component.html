@@ -1,0 +1,45 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by firstName"
+        [(ngModel)]="firstName"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchFirstName()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Clients List</h4>
+    <ul class="list-group">
+      @for (client of clients; track client.id; let i = $index) {
+      <li
+        class="list-group-item"
+        [class.active]="i == currentIndex"
+        (click)="setActiveClient(client, i)"
+      >
+        {{ client.firstName }} {{ client.lastName}}
+      </li>
+      }
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllClients()">
+      Remove All
+    </button>
+  </div>
+  <div class="col-md-6">
+    <app-client-details
+      [viewMode]="true"
+      [currentClient]="currentClient"
+    ></app-client-details>
+  </div>
+</div>

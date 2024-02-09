@@ -1,0 +1,33 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="firstName">FirstName</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        required
+        [(ngModel)]="client.firstName"
+        name="firstName"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">LastName</label>
+      <input
+        class="form-control"
+        id="lastName"
+        required
+        [(ngModel)]="client.lastName"
+        name="lastName"
+      />
+    </div>
+
+    <button (click)="saveClient()" class="btn btn-success">Submit</button>
+    } @else {
+    <h4>Client was submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newClient()">Add</button>
+    }
+  </div>
+</div>
