@@ -1,4 +1,10 @@
 .edit-form {
-  max-width: 400px;
+  max-width: 600px;
   margin: auto;
 }
+
+.edit-info {
+  border-style: dot-dash;
+}
+
+

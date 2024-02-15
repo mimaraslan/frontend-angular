@@ -1,21 +1,27 @@
 @if (viewMode){
   @if (currentClient.id){
-  <h4>Client</h4>
-  <div>
-    <label><strong>FirstName:</strong></label> {{ currentClient.firstName }}
-  </div>
-  <div>
-    <label><strong>LastName:</strong></label>
-    {{ currentClient.lastName }}
-  </div>
-  <div>
-    <label><strong>Status:</strong></label>
-    {{ currentClient.confirmed ? "Confirmed" : "Pending" }}
-  </div>
 
-  <a class="btn btn-warning" routerLink="/clients/{{ currentClient.id }}">
-    Edit
-  </a>
+      <h4>Client</h4>
+
+    <div class="edit-info">
+      <div>
+        <label><strong>FirstName:</strong></label> {{ currentClient.firstName }}
+      </div>
+      <div>
+        <label><strong>LastName:</strong></label>
+        {{ currentClient.lastName }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentClient.confirmed ? "Confirmed" : "Pending" }}
+      </div>
+    </div>
+
+    <br>
+      <a class="btn btn-warning" routerLink="/clients/{{ currentClient.id }}">
+        Edit
+      </a>
+
   } @else {<p>Please click on a Client...</p>}
 } @else {
   @if (currentClient.id) {
