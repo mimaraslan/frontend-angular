@@ -1,0 +1,38 @@
+<p>home works!</p>
+<app-content-list></app-content-list>
+
+<hr/>
+<div [ngClass]="'myClass1 myClass2'">NgClass Example1</div>
+<div [ngClass]="['myClass1', 'myClass2']">NgClass Example2</div>
+<div [ngClass]="{'myClass1':true, 'myClass2':5<1, 'myClass3': 'lolo'==='lolo'}">NgClass Example3</div>
+<div [ngClass]="{'myClass1 myClass2 myClass3': 10===10}">NgClass Example4</div>
+
+<hr/>
+<div [ngStyle]="{'font-weight':800}">NgStyle Example1</div>
+<div [ngStyle]="{'height':'30px'}">NgStyle Example2 v1</div>
+<div [ngStyle]="{'height.px':40}">NgStyle Example2 v2</div>
+<div [ngStyle]="{'height.%':50}">NgStyle Example2 v3</div>
+
+<hr/>
+<ul>
+  <li *ngFor="let student of students">{{student}}</li>
+</ul>
+
+<hr/>
+<ul>
+  <li *ngFor="let student of students2">
+    <strong *ngIf="student.age>12">{{student.firstName}} </strong>
+    <span *ngIf="student.age<12">{{student.firstName}} </span>
+    {{student.age}}
+  </li>
+</ul>
+
+<hr/>
+<ul>
+  <li *ngFor="let student of students2; let i = index">
+    {{i}}
+    <strong *ngIf="student.age>12" appHighlight>{{student.firstName}} </strong>
+    <span *ngIf="student.age<12">{{student.firstName}} </span>
+    {{student.age}}
+  </li>
+</ul>
