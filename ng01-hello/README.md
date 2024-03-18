@@ -13,13 +13,18 @@ ng g module content
 ng g component content/content-list
 
 // EĞER components KLASÖRÜNE EKLİYORSAK O ZAMAN MODULÜNÜ BELİRTMELİYDİK!!!
+
 ng g component components/content-list  --module=content
 
 
 ng g directive directives/highlight --skipTest
 
 
+ng g service services/user --skipTest
 
+
+
+https://jsonplaceholder.typicode.com/users
 
 
 
